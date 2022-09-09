@@ -1,7 +1,10 @@
 import json
-
+import os
 
 def hello(event, context):
+
+    env = os.environ.get('TEST_VAR')
+
     body = {
         "message": "Go Serverless v1.0! Your function executed successfully!testtest",
         "input": event
@@ -9,7 +12,7 @@ def hello(event, context):
 
     response = {
         "statusCode": 200,
-        "body": "test"
+        "body": env
         #"body": json.dumps(body)
     }
 
